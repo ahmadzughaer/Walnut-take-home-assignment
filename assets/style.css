@@ -24,3 +24,15 @@ body {
   border: 1px solid rgb(45, 44, 44);
   text-align: center;
 }
+
+#statusButton {
+  width: 70px;
+  height: 30px;
+  background: #2d66d2;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: medium;
+  text-transform: uppercase;
+}
+
