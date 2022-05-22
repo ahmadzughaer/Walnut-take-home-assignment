@@ -38,34 +38,31 @@ body {
 }
 
 #statusButton:hover {
-    background: #fff;
-    color: #2d66d2;
-    border: 1px solid #2d66d2;  
+  background: #fff;
+  color: #2d66d2;
+  border: 1px solid #2d66d2;
 }
 .header {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
-.select-wrapper
-{
+.select-wrapper {
   border: 1px solid rgb(0, 0, 0);
   margin-bottom: 10px;
   padding: 5px;
-  width:120px;
+  width: 120px;
   height: 20px;
-  background:#fff;
+  background: #fff;
 }
 
-.select-wrapper label
-{
-  font-size:small;
+.select-wrapper label {
+  font-size: small;
   color: rgb(0, 0, 0);
 }
 
-select
-{
-    background:#fff;
-    width: 40%;
-    border:0px;
-    cursor: pointer;
+select {
+  background: #fff;
+  width: 40%;
+  border: 0px;
+  cursor: pointer;
 }

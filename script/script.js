@@ -20,10 +20,8 @@ const createGrid = (rows, cols) => {
 // handle hover effect 
 const hoverHandler = (e) => {
     if (e.target.style.background === "white") {
-        console.log(e.target)
         e.target.style.background = "blue";
     } else if (e.target.style.background === "blue") {
-        console.log(e.target)
         e.target.style.background = "white";
     }
 }
@@ -47,8 +45,6 @@ const fillGrid = (color, columnStart, columnEnd) => {
         grid.childNodes[column].style.background = color;
     }
 }
-
-
 
 // get the grid size 
 const getGridSize = () => {
