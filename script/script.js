@@ -20,8 +20,8 @@ const createGrid = (rows, cols) => {
 // handle hover effect 
 const hoverHandler = (e) => {
     if (e.target.style.background === "white") {
-        e.target.style.background = "blue";
-    } else if (e.target.style.background === "blue") {
+        e.target.style.background = "rgb(63, 154, 242)";
+    } else if (e.target.style.background === "rgb(63, 154, 242)") {
         e.target.style.background = "white";
     }
 }
@@ -54,15 +54,15 @@ const getGridSize = () => {
 // fill grid with blue cells 
 const fillInitialGrid = (gridSize) => {
     if (gridSize > 3) {
-        fillGrid('blue', gridSize + 1, gridSize + 3)
-        fillGrid('blue', gridSize * 2 + 3, gridSize * 2 + 3)
+        fillGrid('rgb(63, 154, 242)', gridSize + 1, gridSize + 3)
+        fillGrid('rgb(63, 154, 242)', gridSize * 2 + 3, gridSize * 2 + 3)
     }
     else if (gridSize === 3) {
-        fillGrid('blue', gridSize, gridSize + 2)
-        fillGrid('blue', gridSize * 2 + 2, gridSize * 2 + 2)
+        fillGrid('rgb(63, 154, 242)', gridSize, gridSize + 2)
+        fillGrid('rgb(63, 154, 242)', gridSize * 2 + 2, gridSize * 2 + 2)
     }
     else {
-        fillGrid('blue', gridSize - 1, gridSize - 1)
+        fillGrid('rgb(63, 154, 242)', gridSize - 1, gridSize - 1)
     }
 }
 
