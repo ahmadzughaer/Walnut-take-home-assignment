@@ -6,6 +6,7 @@ const buttonText = {
     stop: 'stop'
 }
 
+// create a grid based on passed rows and columns number
 const createGrid = (rows, cols) => {
     grid.style.setProperty('--grid-rows', rows);
     grid.style.setProperty('--grid-cols', cols);
@@ -16,13 +17,17 @@ const createGrid = (rows, cols) => {
     };
 }
 
+// handle hover effect 
 const hoverHandler = (e) => {
     if (e.target.style.background === "white") {
+        console.log(e.target)
         e.target.style.background = "blue";
     } else if (e.target.style.background === "blue") {
+        console.log(e.target)
         e.target.style.background = "white";
     }
 }
+// event listener on click to start  hover effect 
 const startGrid = () => {
     statusButton.addEventListener('click', (e) => {
         if (e.target.textContent === buttonText.start) {
@@ -36,41 +41,48 @@ const startGrid = () => {
     })
 }
 
-
-
-
+// fill grid with cells
 const fillGrid = (color, columnStart, columnEnd) => {
     for (let column = columnStart; column <= columnEnd; column++) {
         grid.childNodes[column].style.background = color;
     }
 }
 
+
+
+// get the grid size 
+const getGridSize = () => {
+    return parseInt(select.value)
+}
+
+// fill grid with blue cells 
 const fillInitialGrid = (gridSize) => {
-    if (gridSize > 2) {
+    if (gridSize > 3) {
         fillGrid('blue', gridSize + 1, gridSize + 3)
         fillGrid('blue', gridSize * 2 + 3, gridSize * 2 + 3)
-    } else {
-        fillGrid('blue', gridSize, gridSize)
+    }
+    else if (gridSize === 3) {
+        fillGrid('blue', gridSize, gridSize + 2)
+        fillGrid('blue', gridSize * 2 + 2, gridSize * 2 + 2)
+    }
+    else {
+        fillGrid('blue', gridSize - 1, gridSize - 1)
     }
 }
 
-const getGridSize = () => {
-    return parseInt(select.value, 10)
-}
-
+// start the grid 
 const initiateGrid = () => {
     statusButton.textContent = buttonText.start
     startGrid()
     createGrid(getGridSize(), getGridSize())
-    fillInitialGrid(getGridSize())
     select.addEventListener(('change'), () => {
-        grid.innerHTML = ""
+        grid.innerText = ""
         createGrid(getGridSize(), getGridSize())
         fillInitialGrid(getGridSize())
         statusButton.textContent = buttonText.start
         grid.removeEventListener('mouseover', hoverHandler)
-    
     })
+    fillInitialGrid(getGridSize())
 }
 
 initiateGrid()
